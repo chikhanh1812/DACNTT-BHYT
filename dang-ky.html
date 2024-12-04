@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký bảo hiểm y tế</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007BFF;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            margin-top: 0.5rem;
+            padding: 0.8rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .instructions {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #e9f7ff;
+            border-left: 5px solid #007BFF;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Đăng ký Bảo hiểm y tế</h1>
+</header>
+
+<div class="container">
+    <h1>Biểu mẫu đăng ký</h1>
+    <form id="registrationForm">
+        <label for="fullName">Họ và tên</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Nhập họ và tên" required>
+        
+        <label for="idNumber">CMND/CCCD</label>
+        <input type="text" id="idNumber" name="idNumber" placeholder="Nhập CMND/CCCD" required>
+        
+        <label for="phone">Số điện thoại</label>
+        <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Nhập địa chỉ email" required>
+        
+        <label for="address">Địa chỉ</label>
+        <textarea id="address" name="address" placeholder="Nhập địa chỉ" rows="3" required></textarea>
+        
+        <label for="insuranceType">Loại bảo hiểm</label>
+        <select id="insuranceType" name="insuranceType" required>
+            <option value="">-- Chọn loại bảo hiểm --</option>
+            <option value="ca_nhan">Bảo hiểm cá nhân</option>
+            <option value="gia_dinh">Bảo hiểm gia đình</option>
+        </select>
+        
+        <button type="submit">Gửi thông tin</button>
+    </form>
+
+    <div class="instructions">
+        <h3>Hướng dẫn</h3>
+        <p>1. Điền đầy đủ thông tin vào biểu mẫu trên.</p>
+        <p>2. Nhấn "Gửi thông tin" để hoàn tất đăng ký.</p>
+        <p>3. Hệ thống sẽ gửi thông báo xác nhận qua email hoặc SMS.</p>
+    </div>
+</div>
+
+<script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Thông tin của bạn đã được gửi! Chúng tôi sẽ liên hệ sớm nhất.');
+    });
+</script>
+
+</body>
+</html>
