@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra cứu hồ sơ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007BFF;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        input {
+            width: 60%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 0.8rem 1.5rem;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            margin-left: 1rem;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .results {
+            margin-top: 2rem;
+        }
+        .results table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .results th, .results td {
+            border: 1px solid #ddd;
+            padding: 0.8rem;
+            text-align: left;
+        }
+        .results th {
+            background: #007BFF;
+            color: white;
+        }
+        .status {
+            font-weight: bold;
+            color: #007BFF;
+        }
+        .status.processing {
+            color: #FFA500;
+        }
+        .status.completed {
+            color: #28A745;
+        }
+        .status.rejected {
+            color: #DC3545;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Tra cứu hồ sơ</h1>
+</header>
+
+<div class="container">
+    <h1>Tìm kiếm hồ sơ</h1>
+    <form id="searchForm">
+        <input type="text" id="searchInput" placeholder="Nhập mã hồ sơ hoặc CMND/CCCD" required>
+        <button type="submit">Tra cứu</button>
+    </form>
+
+    <div class="results" id="results">
+        <!-- Kết quả tra cứu sẽ được hiển thị tại đây -->
+    </div>
+</div>
+
+<script>
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const searchValue = document.getElementById('searchInput').value;
+
+        // Mock data kết quả tra cứu
+        const mockData = {
+            profileId: 'HS123456',
+            name: 'Nguyễn Văn A',
+            receivedDate: '2024-01-01',
+            status: 'Đang xử lý',
+            processingDetails: 'Hồ sơ đang được kiểm tra tại phòng xét duyệt.'
+        };
+
+        // Render kết quả tra cứu
+        // const resultsContainer = document.getElementById('results');
+        // resultsContainer.innerHTML = `
+        //     <h2>Kết quả tra cứu</h2>
+        //     <table>
+        //         <tr>
+        //             <th>Mã hồ sơ</th>
+        //             <td>${mockData.profileId}</td>
+        //         </tr>
+        //         <tr>
+        //             <th>Họ và tên</th>
+        //             <td>${mockData.name}</td>
+        //         </tr>
+        //         <tr>
+        //             <th>Ngày tiếp nhận</th>
+        //             <td>${mockData.receivedDate}</td>
+        //         </tr>
+        //         <tr>
+        //             <th>Tình trạng</th>
+        //             <td class="status processing">${mockData.status}</td>
+        //         </tr>
+        //         <tr>
+        //             <th>Chi tiết xử lý</th>
+        //             <td>${mockData.processingDetails}</td>
+        //         </tr>
+        //     </table>
+        // `;
+    });
+</script>
+
+</body>
+</html>
